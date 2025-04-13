@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha & Co.</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5889/5889003.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-r from-white to-lime-200 min-h-screen">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+        <!-- Left Column: Menu -->
+        <div class="bg-white p-6 shadow space-y-4 md:col-span-2 w-full">
+            <p class="text-xl text-center text-lime-600 font-semibold mb-2">Matcha & Co.</p>
+            <h2 class="text-4xl text-center font-bold text-black mb-12">Menu</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Product 1 -->
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <div class="w-40 h-40 mb-4">
+                        <img src="https://blenz.com/wp-content/uploads/2023/08/blenz-iced-matcha-latte.png" alt="Iced Matcha Latte" class="w-full h-full object-contain rounded" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-black mb-1">Iced Matcha Latte</h3>
+                    <p class="text-md text-lime-600 font-semibold mb-2">₱115</p>
+                    <input type="number" id="qty-latte" class="w-full p-2 border rounded mb-2" placeholder="Quantity">
+                    <button onclick="addToOrder('Iced Matcha Latte', 115, 'qty-latte')" class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-lime-700 w-full">Add to Order</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <div class="w-40 h-40 mb-4">
+                        <img src="https://static.vecteezy.com/system/resources/previews/046/032/458/non_2x/green-matcha-soft-serve-ice-cream-cone-creamy-delicious-and-refreshing-summer-treat-free-png.png" alt="Matcha Ice Cream" class="w-full h-full object-contain rounded" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-black mb-1">Matcha Ice Cream</h3>
+                    <p class="text-md text-lime-600 font-semibold mb-2">₱80</p>
+                    <input type="number" id="qty-icecream" class="w-full p-2 border rounded mb-2" placeholder="Quantity">
+                    <button onclick="addToOrder('Matcha Ice Cream', 80, 'qty-icecream')" class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-lime-700 w-full">Add to Order</button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <div class="w-40 h-40 mb-4">
+                        <img src="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-173674000000000000/menu/items/7/item-900000000425924847_1694671630.png?size=medium" alt="Matcha Cheesecake" class="w-full h-full object-contain rounded" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-black mb-1">Matcha Cheesecake</h3>
+                    <p class="text-md text-lime-600 font-semibold mb-2">₱185</p>
+                    <input type="number" id="qty-cheesecake" class="w-full p-2 border rounded mb-2" placeholder="Quantity">
+                    <button onclick="addToOrder('Matcha Cheesecake', 185, 'qty-cheesecake')" class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-lime-700 w-full">Add to Order</button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <div class="w-40 h-40 mb-4">
+                        <img src="https://bubbiesicecream.com/cdn/shop/products/ProductHero-Staged_Green-Tea_480x.png?v=1642685305" alt="Matcha Mochi" class="w-full h-full object-contain rounded" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-black mb-1">Matcha Mochi</h3>
+                    <p class="text-md text-lime-600 font-semibold mb-2">₱100</p>
+                    <input type="number" id="qty-mochi" class="w-full p-2 border rounded mb-2" placeholder="Quantity">
+                    <button onclick="addToOrder('Matcha Mochi', 100, 'qty-mochi')" class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-lime-700 w-full">Add to Order</button>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <img src="https://png.pngtree.com/png-vector/20250111/ourmid/pngtree-warm-matcha-latte-with-a-velvety-texture-png-image_15148905.png" alt="Hot Matcha Latte" class="w-40 h-40 mb-4 object-contain rounded" />
+                    <h3 class="text-lg font-semibold text-black mb-1">Hot Matcha Latte</h3>
+                    <p class="text-md text-lime-600 font-semibold mb-2">₱110</p>
+                    <input type="number" id="qty-hot" class="w-full p-2 border rounded mb-2" placeholder="Quantity">
+                    <button onclick="addToOrder('Hot Matcha Latte', 110, 'qty-hot')" class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-lime-700 w-full">Add to Order</button>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/049/160/027/small_2x/matcha-milkshake-topped-with-fresh-leaves-and-a-striped-straw-png.png" alt="Matcha Frappe" class="w-40 h-40 mb-4 object-contain rounded" />
+                    <h3 class="text-lg font-semibold text-black mb-1">Matcha Frappe</h3>
+                    <p class="text-md text-lime-600 font-semibold mb-2">₱130</p>
+                    <input type="number" id="qty-frappe" class="w-full p-2 border rounded mb-2" placeholder="Quantity">
+                    <button onclick="addToOrder('Matcha Frappe', 130, 'qty-frappe')" class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-lime-700 w-full">Add to Order</button>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <img src="https://png.pngtree.com/png-clipart/20240314/original/pngtree-croissant-green-tea-with-almond-png-image_14583069.png" alt="Matcha Croissant" class="w-40 h-40 mb-4 object-contain rounded" />
+                    <h3 class="text-lg font-semibold text-black mb-1">Matcha Croissant</h3>
+                    <p class="text-md text-lime-600 font-semibold mb-2">₱90</p>
+                    <input type="number" id="qty-croissant" class="w-full p-2 border rounded mb-2" placeholder="Quantity">
+                    <button onclick="addToOrder('Matcha Croissant', 90, 'qty-croissant')" class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-lime-700 w-full">Add to Order</button>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <img src="https://sevenleavestea.com/wp-content/uploads/2022/05/matcha_roll_cake-1-2.png" alt="Matcha Roll Cake" class="w-40 h-40 mb-4 object-contain rounded" />
+                    <h3 class="text-lg font-semibold text-black mb-1">Matcha Roll Cake</h3>
+                    <p class="text-md text-lime-600 font-semibold mb-2">₱95</p>
+                    <input type="number" id="qty-roll" class="w-full p-2 border rounded mb-2" placeholder="Quantity">
+                    <button onclick="addToOrder('Matcha Roll Cake', 95, 'qty-roll')" class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-lime-700 w-full">Add to Order</button>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <img src="https://sevenleavestea.com/wp-content/uploads/2022/05/matcha_shiratama_parfait-1.png" alt="Matcha Parfait" class="w-40 h-40 mb-4 object-contain rounded" />
+                    <h3 class="text-lg font-semibold text-black mb-1">Matcha Parfait</h3>
+                    <p class="text-md text-lime-600 font-semibold mb-2">₱140</p>
+                    <input type="number" id="qty-parfait" class="w-full p-2 border rounded mb-2" placeholder="Quantity">
+                    <button onclick="addToOrder('Matcha Parfait', 140, 'qty-parfait')" class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-lime-700 w-full">Add to Order</button>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="bg-white p-4 rounded-lg shadow-lg text-center flex flex-col items-center">
+                    <img src="https://sevenleavestea.com/wp-content/uploads/2022/05/matcha_azuki_shiratama_latte_hot-1-1.png" alt="Matcha Pudding" class="w-40 h-40 mb-4 object-contain rounded" />
+                    <h3 class="text-lg font-semibold text-black mb-1">Matcha Pudding</h3>
+                    <p class="text-md text-lime-600 font-semibold mb-2">₱85</p>
+                    <input type="number" id="qty-pudding" class="w-full p-2 border rounded mb-2" placeholder="Quantity">
+                    <button onclick="addToOrder('Matcha Pudding', 85, 'qty-pudding')" class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-lime-700 w-full">Add to Order</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Checkout -->
+        <div class="bg-white p-6 shadow space-y-4 w-full md:w-[600px] fixed top-0 right-0 h-screen overflow-y-auto">
+            <h2 class="text-3xl font-bold text-lime-700">Checkout</h2>
+            <div id="order-summary" class="space-y-2 text-gray-700"></div>
+            <hr>
+            <p class="font-semibold">Total: ₱<span id="total">0</span></p>
+            <input type="number" id="payment" class="w-full p-2 border rounded" placeholder="Enter payment here">
+            <button onclick="checkout()" class="bg-lime-600 text-white px-4 py-2 rounded hover:bg-lime-700 w-full">Pay</button>
+        </div>
+    </div>
+</body>
+<script>
+    let orders = []; // Array to store the list of orders
+
+    // Function to add an item to the order
+    function addToOrder(name, price, qtyId) {
+        const qty = parseInt(document.getElementById(qtyId).value);
+        if (!qty || qty <= 0) return alert("Please enter a valid quantity.");
+        // Check if the item already exists in the order, if yes, update the quantity
+        const existing = orders.find(item => item.name === name);
+        if (existing) {
+            existing.qty += qty;
+        } else {
+            orders.push({ name, price, qty });
+        }
+        
+        updateSummary(); // Update the order summary
+        document.getElementById(qtyId).value = ''; // Clear the quantity input after adding the item
+    }
+    
+    // Function to update the order summary displayed on the page
+    function updateSummary() {
+        const container = document.getElementById('order-summary');
+        container.innerHTML = '';
+        let total = 0;
+        
+        // Loop through each item in the orders array and display its details
+        orders.forEach(item => {
+            const line = document.createElement('div');
+            const itemTotal = item.price * item.qty; // Calculate the total for the current item
+            line.textContent = `${item.name} x${item.qty} - ₱${itemTotal}`; // Display item name, quantity, and total price
+            container.appendChild(line);
+            total += itemTotal; // Add the item total to the overall total
+        });
+
+        // Update the total price display
+        document.getElementById('total').textContent = total;
+    }
+
+    // Function to handle checkout process
+    function checkout() {
+        const payment = parseInt(document.getElementById('payment').value); // Get the payment entered by the user
+        const total = parseInt(document.getElementById('total').textContent); // Get the total amount from the summary
+        if (isNaN(payment)) return alert("Please enter your payment."); // Validate payment input
+
+        // If the payment is less than the total, show an alert for insufficient payment
+        if (payment < total) {
+            alert("Insufficient payment. Please pay the full amount.");
+        } else {
+            const change = payment - total; // Calculate the change
+            alert(`Thank you for ordering! Your change is ₱${change}`);
+            orders = []; // Clear the orders after checkout
+            updateSummary();
+            document.getElementById('payment').value = '';
+            document.getElementById('total').textContent = '0'; 
+        }
+    }
+</script>
+</body>
+</html>
